@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 9c2f55ae9954d1e419396ebedac0f8b7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cyberthrone
+  fontNames:
+  - Cyberthrone
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 99fea804a63fac04f8ccb4c382b07f89, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
