@@ -11,12 +11,12 @@ public class Veiculo : MonoBehaviour
     private GameObject mafia;
     private Rigidbody corpoRigido;
     private float angulo, direcao;
-    [SerializeField] float Velocidade, pesoVeiculo = 1500;
+    [SerializeField] float pesoVeiculo = 1500;
     [SerializeField] float limiteLateral;
     [SerializeField] float rotationZ, sensitivityZ, curva;
     [SerializeField] float carregaNitro;
     bool perdaVelo = false;
-
+    public static float Velocidade;
     public Image BarraNitro;
     public Image Velocimetro;
     [Range(20, 500)]
@@ -32,7 +32,7 @@ public class Veiculo : MonoBehaviour
 
     void Start()
     {
-       
+        Velocidade = 40f;
         corpoRigido = GetComponent<Rigidbody>();
         corpoRigido.mass = pesoVeiculo;
         
@@ -44,7 +44,7 @@ public class Veiculo : MonoBehaviour
             mafia = GameObject.FindWithTag("Mafia");
 
         corpoRigido.velocity = transform.forward * Velocidade;
-        Velocidade += 1f* Time.deltaTime;
+        Velocidade += 1f * Time.deltaTime;
         
 
         direcao = Input.GetAxis("Horizontal");

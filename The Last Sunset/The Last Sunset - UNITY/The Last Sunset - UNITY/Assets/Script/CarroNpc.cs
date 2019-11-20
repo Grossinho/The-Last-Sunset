@@ -18,8 +18,7 @@ public class CarroNpc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-            rgb.velocity = transform.forward *  velo;
-      
+        velo = Veiculo.Velocidade;
+        rgb.velocity = transform.forward * (velo / 2);      
     }
 }

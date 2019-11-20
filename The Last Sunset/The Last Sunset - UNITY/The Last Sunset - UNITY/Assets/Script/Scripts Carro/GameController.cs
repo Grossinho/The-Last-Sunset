@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour
     [SerializeField] Text textoDistancia, textoMusica;
     [SerializeField] RectTransform posTextoMusica;
     [SerializeField] Transform carroPos;
-    [SerializeField] float aumentoDistancia, velocidadeTexto;
+    [SerializeField] float aumentoDistancia, velocidadeTexto, escalaInicial, escalaFinal;
+    [SerializeField] Light farolV, farolA;
     [SerializeField] AudioSource aud;
     public float distancia;
     Vector3 posInicial, textoPosInicial;
@@ -45,9 +46,10 @@ public class GameController : MonoBehaviour
         posInicial = carroPos.position;
 
         textoPosInicial = textoMusica.transform.localPosition;
-        
 
-
+        escalaInicial = 0;
+        escalaFinal = 123;
+        StartCoroutine(Pisca());
 
     }
     private void Update()
@@ -63,6 +65,17 @@ public class GameController : MonoBehaviour
             textoMusica.transform.localPosition = textoPosInicial;
         }
 
+        farolA.intensity = (farolA.intensity - Veiculo.Velocidade) / (  123 - Veiculo.Velocidade) * (escalaInicial + escalaFinal);
+                          //  ((Obstaculo.Y - Player.Y) / (origemY - Player.Y)) * (escalaInicial - escalaFinal)) + escalaFinal;
+
+
+
+
+        if (farolV.enabled)
+        {
+            farolA.enabled = false;
+        }
+        else farolA.enabled = true;
         Pausar();
         
     }
@@ -123,6 +136,13 @@ public class GameController : MonoBehaviour
             paused = !paused;
             
         }
+    }
+
+    IEnumerator Pisca()
+    {
+        yield return new WaitForSeconds(0.3f);
+        farolV.enabled = !farolV.enabled;
+        StartCoroutine(Pisca());
     }
 }
 
