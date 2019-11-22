@@ -41,7 +41,7 @@ public class CriaCarros : MonoBehaviour
             KMAnterior = KMAtual;
         }
 
-        if (geraFita > 90)
+        if (geraFita > 30)
         {
             Instantiate(Fita, new Vector3 (spawnFita.position.x, spawnFita.position.y - 1.5f, spawnFita.position.z), Fita.transform.rotation);
             geraFita = 0;

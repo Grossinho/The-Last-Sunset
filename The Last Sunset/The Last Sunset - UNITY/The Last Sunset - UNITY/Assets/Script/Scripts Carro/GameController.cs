@@ -10,10 +10,11 @@ public class GameController : MonoBehaviour
     public static GameController instancia;
     [SerializeField] Text textoDistancia, textoMusica;
     [SerializeField] RectTransform posTextoMusica;
-    [SerializeField] Transform carroPos;
+    [SerializeField] Transform carroPos, player, vanPolicia;
     [SerializeField] float aumentoDistancia, velocidadeTexto, escalaInicial, escalaFinal;
     [SerializeField] float tempo = 3;
     [SerializeField] AudioSource aud;
+    [SerializeField] Image policiaBarra;
     [SerializeField] UnityEngine.Rendering.PostProcessing.PostProcessLayer post;
     LensAberrations lensAberrations;
     Bloom bloom;
@@ -67,7 +68,7 @@ public class GameController : MonoBehaviour
             textoMusica.transform.localPosition = textoPosInicial;
         }
 
-
+        policiaBarra.fillAmount = 1 - ((Mathf.Abs(player.position.z) - Mathf.Abs(vanPolicia.position.z) - 10) / 180);
         
      
         Pausar();

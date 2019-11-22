@@ -44,7 +44,14 @@ public class Veiculo : MonoBehaviour
             mafia = GameObject.FindWithTag("Mafia");
 
         corpoRigido.velocity = transform.forward * Velocidade;
-        Velocidade += 1f * Time.deltaTime;
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            Velocidade -= 2f * Time.deltaTime;
+        }
+        else
+        {
+            Velocidade += 1f * Time.deltaTime;
+        }
         
 
         direcao = Input.GetAxis("Horizontal");
@@ -66,6 +73,9 @@ public class Veiculo : MonoBehaviour
         {
             Velocidade = 180;
         }
+
+        if (Velocidade <= 40)
+            Velocidade = 40;
 
     }
     void FixedUpdate()

@@ -23,4 +23,14 @@ public class GameOverPal : MonoBehaviour
         }           
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameController.instancia.SaveRecord();
+            Debug.Log(PlayerPrefs.GetFloat("Record"));
+            SceneManager.LoadScene("Game Over");
+        }
+    }
+
 }

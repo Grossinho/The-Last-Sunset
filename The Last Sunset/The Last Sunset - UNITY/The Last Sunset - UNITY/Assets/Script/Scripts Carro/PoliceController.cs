@@ -12,6 +12,7 @@ public class PoliceController : MonoBehaviour
  
     void Start()
     {
+        velo = 40f;
         StartCoroutine(Pisca());
         rgb = GetComponent<Rigidbody>();
     }
@@ -19,8 +20,11 @@ public class PoliceController : MonoBehaviour
  
     void Update()
     {
-        
+        velo += 1f * Time.deltaTime;
         rgb.velocity = transform.forward * velo;
+
+        if (velo >= 150)
+            velo = 150;
 
         if (farolV.enabled)
         {
