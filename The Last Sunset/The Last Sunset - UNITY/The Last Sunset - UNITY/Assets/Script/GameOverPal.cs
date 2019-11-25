@@ -9,18 +9,6 @@ public class GameOverPal : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        if (collision.gameObject.CompareTag("Player"))
-        {            
-            GameController.instancia.SaveRecord();
-            Debug.Log(PlayerPrefs.GetFloat("Record"));
-            SceneManager.LoadScene("Game Over");
-        }           
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,5 +20,7 @@ public class GameOverPal : MonoBehaviour
             SceneManager.LoadScene("Game Over");
         }
     }
+
+
 
 }
