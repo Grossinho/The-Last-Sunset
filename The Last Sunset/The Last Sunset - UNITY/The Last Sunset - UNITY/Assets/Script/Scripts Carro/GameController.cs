@@ -70,7 +70,13 @@ public class GameController : MonoBehaviour
 
         policiaBarra.fillAmount = 1 - ((Mathf.Abs(player.position.z) - Mathf.Abs(vanPolicia.position.z) - 10) / 180);
         
+        /*
+         * if(aud.clip.name == "-- Nada Tocando --")
+        {
+
+        }
      
+        */
         Pausar();
         
     }
