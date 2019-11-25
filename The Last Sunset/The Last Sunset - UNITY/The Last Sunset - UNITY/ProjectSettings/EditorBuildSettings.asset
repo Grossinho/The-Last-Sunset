@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Load.unity
     guid: eb6ee65702ba94a4eb7460e160fbc243
+  - enabled: 1
+    path: Assets/Scenes/Historia.unity
+    guid: 30ccb9754e353c74b8e2a76c6c127134
   m_configObjects: {}
