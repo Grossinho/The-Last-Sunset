@@ -10,10 +10,17 @@ public class Load : MonoBehaviour
 
     void Start()
     {        
+        m_Text.text = "Carregando...";
         StartCoroutine(LoadScene());
 
     }
-    
+
+    private void LateUpdate()
+    {
+        
+
+    }
+
 
     IEnumerator LoadScene()
     {
@@ -26,7 +33,6 @@ public class Load : MonoBehaviour
         // Não deixe a cena ser ativada até que 
         asyncOperation.allowSceneActivation = false;
 
-        
         // Quando o carregamento ainda está em andamento, produza a barra de texto e progresso
         while (!asyncOperation.isDone)
         {
@@ -46,5 +52,7 @@ public class Load : MonoBehaviour
 
             yield return null;
         }
+
+        
     }
 }

@@ -68,9 +68,15 @@ public class GameController : MonoBehaviour
             textoMusica.transform.localPosition = textoPosInicial;
         }
 
-        policiaBarra.fillAmount = 1 - ((Mathf.Abs(player.position.z) - Mathf.Abs(vanPolicia.position.z) - 10) / 180);
+        policiaBarra.fillAmount = 1 - ((Mathf.Abs(player.position.z) - Mathf.Abs(vanPolicia.position.z) - 10) / 1000);
         
+        /*
+         * if(aud.clip.name == "-- Nada Tocando --")
+        {
+
+        }
      
+        */
         Pausar();
         
     }
