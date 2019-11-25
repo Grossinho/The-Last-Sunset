@@ -9,6 +9,10 @@ public class Coletavel : MonoBehaviour
     [SerializeField] GameObject corpo;
 
 
+    private void Update()
+    {
+        transform.Rotate(0, 100 * Time.deltaTime, 0);    
+    }
 
     private void OnTriggerEnter(Collider other)
     {
