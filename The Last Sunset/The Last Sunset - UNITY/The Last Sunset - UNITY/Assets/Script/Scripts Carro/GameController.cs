@@ -8,10 +8,10 @@ using UnityStandardAssets.CinematicEffects;
 public class GameController : MonoBehaviour
 {
     public static GameController instancia;
-    [SerializeField] Text textoDistancia, textoMusica;
+    [SerializeField] Text textoDistancia, textoMusica, textoVelocidade;
     [SerializeField] RectTransform posTextoMusica;
     [SerializeField] Transform carroPos, player, vanPolicia;
-    [SerializeField] float aumentoDistancia, velocidadeTexto, escalaInicial, escalaFinal;
+    [SerializeField] float aumentoDistancia, velocidadeTexto;
     [SerializeField] float tempo = 3;
     [SerializeField] AudioSource aud;
     [SerializeField] Image[] policiaBarra;
@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour
 
         textoPosInicial = textoMusica.transform.localPosition;
 
-        escalaInicial = 0;
-        escalaFinal = 123;
      
 
     }
@@ -59,6 +57,7 @@ public class GameController : MonoBehaviour
     {
         distancia = Mathf.Round(Vector3.Distance(posInicial, carroPos.position) * aumentoDistancia);
         textoDistancia.text = distancia.ToString();
+        textoVelocidade.text =  ((int) Veiculo.Velocidade).ToString() + "KM/h";
 
         textoMusica.text = aud.clip.name.ToString();
         textoMusica.transform.localPosition += new Vector3(-velocidadeTexto * Time.deltaTime, 0, 0);
