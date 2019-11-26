@@ -15,4 +15,13 @@ public class Menu : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
+    public void Sair()
+    {
+        Application.Quit();
+
+
+        //Debug.Log("SaIUUUUUUU");
+        
+    }
 }
