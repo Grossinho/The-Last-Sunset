@@ -6,26 +6,20 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Veiculo : MonoBehaviour
 {
+    [SerializeField] float pesoVeiculo = 1500, limiteLateral, rotationZ, sensitivityZ, curva, carregaNitro, tempo, velMax;
     public Transform[] MeshRodas;
     public WheelCollider[] ColisorRodas;
     private GameObject mafia;
     private Rigidbody corpoRigido;
-    private float angulo, direcao;
-    [SerializeField] float pesoVeiculo = 1500;
-    [SerializeField] float limiteLateral;
-    [SerializeField] float rotationZ, sensitivityZ, curva;
-    [SerializeField] float carregaNitro;
+    private float angulo, direcao, velocidadeCaminhando, velocidadeCorrendo;
     bool perdaVelo = false;
     public static float Velocidade;
-    public Image BarraNitro;
-    public Image Velocimetro;
+    public Image BarraNitro, Velocimetro;
     [Range(20, 500)]
     public float NitroCheio = 100, velocidadeNitro = 250;
     [HideInInspector]
     public float NitroAtual;
     private bool semNitro = false;
-    private float velocidadeCaminhando, velocidadeCorrendo;
-    [SerializeField] float tempo;
 
 
 
@@ -69,9 +63,9 @@ public class Veiculo : MonoBehaviour
         SistemaDeNitro();
         AplicaBarra();
 
-        if(Velocidade >= 180)
+        if(Velocidade >= velMax)
         {
-            Velocidade = 180;
+            Velocidade = velMax;
         }
 
         if (Velocidade <= 40)

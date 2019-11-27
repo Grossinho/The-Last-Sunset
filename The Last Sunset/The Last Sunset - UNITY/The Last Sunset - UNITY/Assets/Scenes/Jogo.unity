@@ -2681,14 +2681,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    threshold: 1.4
-    softKnee: 0.226
-    radius: 6.52
+    threshold: 1.26
+    softKnee: 0.36
+    radius: 7
     intensity: 0
-    highQuality: 0
+    highQuality: 1
     antiFlicker: 1
-    dirtTexture: {fileID: 0}
-    dirtIntensity: 100
+    dirtTexture: {fileID: 2800000, guid: 45ee094d7d3c7b04c9be204993dd6cce, type: 3}
+    dirtIntensity: 5.06
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
 --- !u!114 &970549002
 MonoBehaviour:
@@ -2717,13 +2717,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970548999}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff5335a7357baa3489a469d0ca0f40f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   distortion:
-    enabled: 1
+    enabled: 0
     amount: 0
     centerX: 0
     centerY: 0
@@ -2732,17 +2732,17 @@ MonoBehaviour:
     scale: 1
   vignette:
     enabled: 1
-    color: {r: 1, g: 0.28773582, b: 0.6910193, a: 1}
-    center: {x: 0.5, y: 0.5}
-    intensity: 1
-    smoothness: 1
+    color: {r: 1, g: 0.28627455, b: 0.44571513, a: 1}
+    center: {x: 0.35, y: -0.39}
+    intensity: 0.47
+    smoothness: 1.18
     roundness: 1
     blur: 0
     desaturate: 0
   chromaticAberration:
     enabled: 0
     color: {r: 1, g: 0.2216981, b: 0.66632825, a: 1}
-    amount: 20
+    amount: -15
   m_Shader: {fileID: 4800000, guid: 136ab50fe2b9ad64d9c22adc3668abb7, type: 3}
 --- !u!114 &970549004
 MonoBehaviour:
@@ -2759,15 +2759,15 @@ MonoBehaviour:
   volumeTrigger: {fileID: 970548994}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 34
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 3
   temporalAntialiasing:
-    jitterSpread: 1
-    sharpness: 2
-    stationaryBlending: 0
-    motionBlending: 0
+    jitterSpread: 0.5
+    sharpness: 0.3
+    stationaryBlending: 0.3
+    motionBlending: 0.3
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
@@ -5759,7 +5759,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063769059}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3810f5bfbd9d53d41b9333489258a44f, type: 3}
   m_Name: 
@@ -7155,6 +7155,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a3f87acda8b8e4a9589a3b7a7ba6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pesoVeiculo: 1000
+  limiteLateral: 5.8
+  rotationZ: 0
+  sensitivityZ: 1.5
+  curva: 10
+  carregaNitro: 25
+  tempo: 200
+  velMax: 180
   MeshRodas:
   - {fileID: 1902639799280061514}
   - {fileID: 8968053621026145577}
@@ -7165,18 +7173,11 @@ MonoBehaviour:
   - {fileID: 5815383384517442992}
   - {fileID: 5815383386451222344}
   - {fileID: 5815383386517069928}
-  pesoVeiculo: 1000
-  limiteLateral: 5.8
-  rotationZ: 0
-  sensitivityZ: 1.5
-  curva: 10
-  carregaNitro: 25
   BarraNitro: {fileID: 1758959742}
   Velocimetro: {fileID: 1003694704}
   NitroCheio: 100
   velocidadeNitro: 250
   NitroAtual: 0
-  tempo: 200
 --- !u!4 &5815383384578806300
 Transform:
   m_ObjectHideFlags: 0
