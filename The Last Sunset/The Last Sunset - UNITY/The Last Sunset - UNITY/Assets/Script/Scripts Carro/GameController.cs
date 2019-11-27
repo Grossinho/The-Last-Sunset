@@ -16,12 +16,12 @@ public class GameController : MonoBehaviour
     [SerializeField] AudioSource aud;
     [SerializeField] Image[] policiaBarra;
     [SerializeField] UnityEngine.Rendering.PostProcessing.PostProcessLayer post;
-    [SerializeField] Image piscaAHUD, piscaVHUD;
+    [SerializeField] Image piscaAHUD, piscaVHUD, blur;
     LensAberrations lensAberrations;
     Bloom bloom;
-    bool sireneHUD;
+    bool sireneHUD, GameOver;
     Camera cam;
-    [SerializeField] GameObject painelPause;
+    [SerializeField] GameObject painelPause, painelGameover;
 
 
     public float distancia;
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(Pisca());
+        GameOver = false;
         sireneHUD = true;
         cam = Camera.main;
         bloom = cam.GetComponent<Bloom>();
@@ -89,13 +89,14 @@ public class GameController : MonoBehaviour
             StartCoroutine(Pisca());
             sireneHUD = false;
         }
-        
-        
 
 
-        
-        
-        Pausar();
+
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameOver)
+        {
+            Pausar(false);
+        }
         
     }
 
@@ -130,9 +131,7 @@ public class GameController : MonoBehaviour
 
 
     public void LigaPost(bool simNao)
-    {
-
-        
+    {        
         post.enabled = simNao;
     }
 
@@ -140,30 +139,35 @@ public class GameController : MonoBehaviour
 
 
 
-    public void Pausar()
+    public void Pausar(bool gameover)
     {
+        paused = !paused;
+
         if (paused)
         {
             Time.timeScale = 0f;
-            painelPause.SetActive(true);
-
+            blur.enabled = true;
+            if (gameover)
+            {
+                painelGameover.SetActive(true);
+                GameOver = true;
+            }
+            else painelPause.SetActive(true);
         }
         else
         {
             Time.timeScale = 1;
             painelPause.SetActive(false);
+            blur.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            paused = !paused;
             
-        }
+        
     }
 
     IEnumerator Pisca()
     {
-        Debug.Log("vsf;");
+        
         yield return new WaitForSeconds(0.3f);
         piscaVHUD.enabled = !piscaVHUD.enabled;
         if (policiaBarra[0].fillAmount <= 0.49)

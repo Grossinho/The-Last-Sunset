@@ -9,7 +9,7 @@ public class CriaCarros : MonoBehaviour
     [SerializeField] List <GameObject> carros;
     [SerializeField] GameObject Fita;
     [SerializeField] Transform spawnFita;
-    [SerializeField] float VelocidadeObstaculo;
+    [SerializeField] float VelocidadeObstaculo, tempoFita;
 
 
 
@@ -41,7 +41,7 @@ public class CriaCarros : MonoBehaviour
             KMAnterior = KMAtual;
         }
 
-        if (geraFita > 30)
+        if (geraFita > tempoFita)
         {
             Instantiate(Fita, new Vector3 (spawnFita.position.x, spawnFita.position.y - 1.5f, spawnFita.position.z), Fita.transform.rotation);
             geraFita = 0;
