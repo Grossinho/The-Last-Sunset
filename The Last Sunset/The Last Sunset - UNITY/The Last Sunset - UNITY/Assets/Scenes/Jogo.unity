@@ -8252,6 +8252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a3f87acda8b8e4a9589a3b7a7ba6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limiteLateral: 5.8
+  carregaNitro: 25
+  tempo: 200
+  perdaVeloLateral: 10
+  NitroAtual: 20
   MeshRodas:
   - {fileID: 1902639799280061514}
   - {fileID: 8968053621026145577}
@@ -8262,14 +8267,6 @@ MonoBehaviour:
   - {fileID: 5815383384517442992}
   - {fileID: 5815383386451222344}
   - {fileID: 5815383386517069928}
-  pesoVeiculo: 1000
-  limiteLateral: 5.8
-  rotationZ: 0
-  sensitivityZ: 1.5
-  curva: 10
-  carregaNitro: 25
-  tempo: 200
-  NitroAtual: 0
   BarraNitro: {fileID: 1758959742}
   Velocimetro: {fileID: 1003694704}
   NitroCheio: 100

@@ -6,39 +6,33 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Veiculo : MonoBehaviour
 {
+    [SerializeField] float limiteLateral, carregaNitro, tempo, perdaVeloLateral, NitroAtual;
     public Transform[] MeshRodas;
     public WheelCollider[] ColisorRodas;
     private GameObject mafia;
     private Rigidbody corpoRigido;
-    private float angulo, direcao;
-    [SerializeField] float pesoVeiculo = 1500;
-    [SerializeField] float limiteLateral;
-    [SerializeField] float rotationZ, sensitivityZ, curva;
-    [SerializeField] float carregaNitro;
-    [SerializeField] float tempo;
+    private float angulo, direcao, pesoVeiculo = 1500, rotationZ, sensitivityZ, curva, velocidadeCaminhando, velocidadeCorrendo;
    /* [SerializeField] ParticleSystem part;
     [SerializeField] ParticleSystem part2;
     [SerializeField] ParticleSystem part3;
     */
     public static float Velocidade;
-    public float NitroAtual;
-    [Range(20, 500)]
     public Image BarraNitro;
     public Image Velocimetro;
     public float NitroCheio = 100, velocidadeNitro = 250;
     [HideInInspector]
     bool perdaVelo = false;
     private bool semNitro = false;
-    private float velocidadeCaminhando, velocidadeCorrendo;
 
 
 
     void Start()
     {
+        sensitivityZ = 1.5f;
         Velocidade = 40f;
         corpoRigido = GetComponent<Rigidbody>();
         corpoRigido.mass = pesoVeiculo;
-
+        curva = 10;
     }
     void Update()
     {
@@ -112,8 +106,6 @@ public class Veiculo : MonoBehaviour
             transform.position = new Vector3(limiteLateral * Mathf.Sign(transform.position.x), transform.position.y, transform.position.z);
             transform.localEulerAngles = new Vector3(0, 0, 0);
 
-
-
             perdeVelAcostamento();
 
         }
@@ -123,26 +115,7 @@ public class Veiculo : MonoBehaviour
 
     void perdeVelAcostamento()
     {
-        perdaVelo = true;
-        if (perdaVelo == true && Velocidade > 30f)
-        {
-            Velocidade -= 2f;
-            if (Velocidade == 30f)
-            {
-
-
-                perdaVelo = false;
-
-
-            }
-
-            if (perdaVelo == false)
-            {
-
-                Velocidade = 30f;
-
-            }
-        }
+        Velocidade -= perdaVeloLateral * Time.deltaTime;
     }
 
     void ColisaoCarro()
@@ -231,27 +204,6 @@ public class Veiculo : MonoBehaviour
 
         }
 
-
-
-    }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Veiculo") || other.gameObject.CompareTag("Mafia"))
-        {
-           // part.Play();
-          //  part2.Play();
-           // part3.Play();
-            Time.timeScale = 0.1f;
-            
-            GameController.instancia.SaveRecord();
-            Debug.Log(PlayerPrefs.GetFloat("Record"));
-          
-            
-           
-            //  SceneManager.LoadScene("Game Over");
-        }
     }
 
-    */
 }
