@@ -234,7 +234,7 @@ public class Veiculo : MonoBehaviour
 
 
     }
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Veiculo") || other.gameObject.CompareTag("Mafia"))
@@ -253,5 +253,5 @@ public class Veiculo : MonoBehaviour
         }
     }
 
-
+    */
 }
