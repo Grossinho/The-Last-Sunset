@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
     Bloom bloom;
     bool sireneHUD;
     Camera cam;
-   
+    [SerializeField] GameObject painelPause;
+
+
     public float distancia;
     Vector3 posInicial, textoPosInicial;
 
@@ -93,7 +95,7 @@ public class GameController : MonoBehaviour
 
         
         
-        //Pausar();
+        Pausar();
         
     }
 
@@ -143,10 +145,13 @@ public class GameController : MonoBehaviour
         if (paused)
         {
             Time.timeScale = 0f;
+            painelPause.SetActive(true);
+
         }
         else
         {
             Time.timeScale = 1;
+            painelPause.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
