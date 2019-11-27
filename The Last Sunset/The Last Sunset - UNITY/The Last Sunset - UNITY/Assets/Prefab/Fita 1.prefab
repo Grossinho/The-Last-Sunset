@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1.7892, y: 1.7892, z: 1.7892}
   m_Children:
   - {fileID: 6801819022673815740}
-  - {fileID: 9180318848130683343}
+  - {fileID: 725368530685429421}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -624,6 +624,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1411875199988080020}
     m_Modifications:
+    - target: {fileID: 6824010263142381003, guid: 3c3e7b585f1e27c479bf4947bc038352,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824010263156511449, guid: 3c3e7b585f1e27c479bf4947bc038352,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824010263156511449, guid: 3c3e7b585f1e27c479bf4947bc038352,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824010263156511449, guid: 3c3e7b585f1e27c479bf4947bc038352,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.76862746
+      objectReference: {fileID: 0}
     - target: {fileID: 3154152111933542251, guid: 3c3e7b585f1e27c479bf4947bc038352,
         type: 3}
       propertyPath: m_Name
@@ -716,9 +736,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3e7b585f1e27c479bf4947bc038352, type: 3}
---- !u!4 &9180318848130683343 stripped
+--- !u!4 &725368530685429421 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3154152111933956777, guid: 3c3e7b585f1e27c479bf4947bc038352,
+  m_CorrespondingSourceObject: {fileID: 6824010263142381003, guid: 3c3e7b585f1e27c479bf4947bc038352,
     type: 3}
   m_PrefabInstance: {fileID: 6098656714401788774}
   m_PrefabAsset: {fileID: 0}
