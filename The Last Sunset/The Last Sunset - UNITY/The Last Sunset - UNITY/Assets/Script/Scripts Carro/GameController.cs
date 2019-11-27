@@ -154,7 +154,7 @@ public class GameController : MonoBehaviour
             painelPause.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             paused = !paused;
             

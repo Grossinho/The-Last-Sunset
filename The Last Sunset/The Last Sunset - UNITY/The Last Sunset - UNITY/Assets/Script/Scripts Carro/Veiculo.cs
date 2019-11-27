@@ -242,19 +242,16 @@ public class Veiculo : MonoBehaviour
            // part.Play();
           //  part2.Play();
            // part3.Play();
+            Time.timeScale = 0.1f;
             
             GameController.instancia.SaveRecord();
             Debug.Log(PlayerPrefs.GetFloat("Record"));
-            StartCoroutine(Morreu());
+          
             
-            Time.timeScale = 0.1f;
-
+           
             //  SceneManager.LoadScene("Game Over");
         }
     }
-    IEnumerator Morreu()
-    {
-        yield return new WaitForSeconds(0);
-    }
+
 
 }
