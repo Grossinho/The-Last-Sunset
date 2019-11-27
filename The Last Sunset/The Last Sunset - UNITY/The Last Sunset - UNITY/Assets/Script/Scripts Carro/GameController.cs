@@ -74,11 +74,12 @@ public class GameController : MonoBehaviour
                 i = 0;
         }
 
-        if (piscaVHUD.enabled)
+        if (policiaBarra[0].fillAmount >= 0.5 && piscaVHUD.enabled)
         {
             piscaAHUD.enabled = false;
         }
-        else piscaAHUD.enabled = true;
+        else if (policiaBarra[0].fillAmount >= 0.5)
+            piscaAHUD.enabled = true;
 
         
         if (policiaBarra[0].fillAmount >= 0.5 && sireneHUD)
@@ -163,6 +164,8 @@ public class GameController : MonoBehaviour
         if (policiaBarra[0].fillAmount <= 0.49)
         {
             sireneHUD = true;
+            piscaAHUD.enabled = false;
+            piscaVHUD.enabled = false;
         }
         else
             StartCoroutine(Pisca());
