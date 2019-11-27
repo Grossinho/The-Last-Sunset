@@ -8,10 +8,12 @@ public class PoliceController : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Light farolV, farolA;
     [SerializeField]float velo;
+    bool vida;
     Rigidbody rgb;
  
     void Start()
     {
+        vida = true;
         velo = 40f;
         StartCoroutine(Pisca());
         rgb = GetComponent<Rigidbody>();
@@ -32,7 +34,13 @@ public class PoliceController : MonoBehaviour
         }
         else farolA.enabled = true;
 
-        transform.position = new Vector3(player.position.x, transform.position.y , transform.position.z); 
+        transform.position = new Vector3(player.position.x, transform.position.y , transform.position.z);
+
+        if (transform.position.z + 13 > player.position.z && vida)
+        {
+            velo = Veiculo.Velocidade - 2;
+            vida = false;
+        }
     }
 
 
