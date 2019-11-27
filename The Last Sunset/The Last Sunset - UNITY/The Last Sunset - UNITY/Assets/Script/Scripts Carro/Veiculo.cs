@@ -6,21 +6,30 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Veiculo : MonoBehaviour
 {
-    [SerializeField] float pesoVeiculo = 1500, limiteLateral, rotationZ, sensitivityZ, curva, carregaNitro, tempo, velMax;
     public Transform[] MeshRodas;
     public WheelCollider[] ColisorRodas;
     private GameObject mafia;
     private Rigidbody corpoRigido;
-    private float angulo, direcao, velocidadeCaminhando, velocidadeCorrendo;
-    bool perdaVelo = false;
+    private float angulo, direcao;
+    [SerializeField] float pesoVeiculo = 1500;
+    [SerializeField] float limiteLateral;
+    [SerializeField] float rotationZ, sensitivityZ, curva;
+    [SerializeField] float carregaNitro;
+    [SerializeField] float tempo;
+   /* [SerializeField] ParticleSystem part;
+    [SerializeField] ParticleSystem part2;
+    [SerializeField] ParticleSystem part3;
+    */
     public static float Velocidade;
-    public Image BarraNitro, Velocimetro;
+    public float NitroAtual;
     [Range(20, 500)]
+    public Image BarraNitro;
+    public Image Velocimetro;
     public float NitroCheio = 100, velocidadeNitro = 250;
     [HideInInspector]
-    public float NitroAtual;
+    bool perdaVelo = false;
     private bool semNitro = false;
-
+    private float velocidadeCaminhando, velocidadeCorrendo;
 
 
 
@@ -29,7 +38,7 @@ public class Veiculo : MonoBehaviour
         Velocidade = 40f;
         corpoRigido = GetComponent<Rigidbody>();
         corpoRigido.mass = pesoVeiculo;
-        
+
     }
     void Update()
     {
@@ -46,7 +55,7 @@ public class Veiculo : MonoBehaviour
         {
             Velocidade += 1f * Time.deltaTime;
         }
-        
+
 
         direcao = Input.GetAxis("Horizontal");
         if (Input.GetAxis("Horizontal") > 0.7f || Input.GetAxis("Horizontal") < -0.7f)
@@ -63,9 +72,9 @@ public class Veiculo : MonoBehaviour
         SistemaDeNitro();
         AplicaBarra();
 
-        if(Velocidade >= velMax)
+        if (Velocidade >= 180)
         {
-            Velocidade = velMax;
+            Velocidade = 180;
         }
 
         if (Velocidade <= 40)
@@ -78,8 +87,8 @@ public class Veiculo : MonoBehaviour
         ColisorRodas[0].steerAngle = angulo * 40;
         ColisorRodas[1].steerAngle = angulo * 40;
         //
-        
-        
+
+
 
         for (int x = 0; x < ColisorRodas.Length; x++)
         {
@@ -90,26 +99,26 @@ public class Veiculo : MonoBehaviour
             MeshRodas[x].rotation = quat;
         }
 
-        
+
     }
 
 
     public void colisaoLateral()
     {
-        
-        
-          if (Mathf.Abs(transform.position.x) > limiteLateral)
-          {
+
+
+        if (Mathf.Abs(transform.position.x) > limiteLateral)
+        {
 
             transform.position = new Vector3(limiteLateral * Mathf.Sign(transform.position.x), transform.position.y, transform.position.z);
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            
-             
-                
-             perdeVelAcostamento();   
-               
-          }
-        
+
+
+
+            perdeVelAcostamento();
+
+        }
+
 
     }
 
@@ -152,7 +161,7 @@ public class Veiculo : MonoBehaviour
 
             }
 
-          
+
         }
     }
 
@@ -176,7 +185,7 @@ public class Veiculo : MonoBehaviour
         }
         else
         {
-            NitroAtual += Time.deltaTime * ( Velocidade / carregaNitro) * Mathf.Pow(2.718f, multEuler);
+            NitroAtual += Time.deltaTime * (Velocidade / carregaNitro) * Mathf.Pow(2.718f, multEuler);
         }
         if (NitroAtual <= 0)
         {
@@ -194,14 +203,14 @@ public class Veiculo : MonoBehaviour
             Velocidade += 0.1f;
             GameController.instancia.nitro(1f);
             GameController.instancia.zom(true);
-           // GameController.instancia.LigaPost(0);
+            // GameController.instancia.LigaPost(0);
         }
         else
         {
-             // GameController.instancia.LigaPost(3);
-              GameController.instancia.nitro(0f);
-              GameController.instancia.zom(false);
-                
+            // GameController.instancia.LigaPost(3);
+            GameController.instancia.nitro(0f);
+            GameController.instancia.zom(false);
+
         }
 
     }
@@ -209,22 +218,44 @@ public class Veiculo : MonoBehaviour
     void AplicaBarra()
     {
         BarraNitro.fillAmount = ((1 / NitroCheio) * NitroAtual);
-        Velocimetro.fillAmount = Velocidade  /tempo;
+        Velocimetro.fillAmount = Velocidade / tempo;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+
 
         if (collision.gameObject.CompareTag("Veiculo"))
         {
-            
+
             ColisaoCarro();
 
         }
 
-        
-           
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Veiculo") || other.gameObject.CompareTag("Mafia"))
+        {
+           // part.Play();
+          //  part2.Play();
+           // part3.Play();
+            
+            GameController.instancia.SaveRecord();
+            Debug.Log(PlayerPrefs.GetFloat("Record"));
+            StartCoroutine(Morreu());
+            
+            Time.timeScale = 0;
+
+            //  SceneManager.LoadScene("Game Over");
+        }
+    }
+    IEnumerator Morreu()
+    {
+        yield return new WaitForSeconds(0);
     }
 
 }
