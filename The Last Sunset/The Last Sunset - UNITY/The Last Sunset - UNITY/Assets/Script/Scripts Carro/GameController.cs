@@ -163,7 +163,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator Pisca()
     {
-        Debug.Log("vsf;");
+        
         yield return new WaitForSeconds(0.3f);
         piscaVHUD.enabled = !piscaVHUD.enabled;
         if (policiaBarra[0].fillAmount <= 0.49)
