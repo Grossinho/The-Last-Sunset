@@ -3036,7 +3036,7 @@ MonoBehaviour:
     enabled: 1
     color: {r: 1, g: 0.28627455, b: 0.44571513, a: 1}
     center: {x: 0.35, y: -0.39}
-    intensity: 0.47
+    intensity: 0.45
     smoothness: 1.18
     roundness: 1
     blur: 0
@@ -7745,14 +7745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a3f87acda8b8e4a9589a3b7a7ba6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pesoVeiculo: 1000
-  limiteLateral: 5.8
-  rotationZ: 0
-  sensitivityZ: 1.5
-  curva: 10
-  carregaNitro: 25
-  tempo: 200
-  velMax: 180
   MeshRodas:
   - {fileID: 1902639799280061514}
   - {fileID: 8968053621026145577}
@@ -7763,11 +7755,18 @@ MonoBehaviour:
   - {fileID: 5815383384517442992}
   - {fileID: 5815383386451222344}
   - {fileID: 5815383386517069928}
+  pesoVeiculo: 1000
+  limiteLateral: 5.8
+  rotationZ: 0
+  sensitivityZ: 1.5
+  curva: 10
+  carregaNitro: 25
+  tempo: 200
+  NitroAtual: 0
   BarraNitro: {fileID: 1758959742}
   Velocimetro: {fileID: 1003694704}
   NitroCheio: 100
   velocidadeNitro: 250
-  NitroAtual: 0
 --- !u!4 &5815383384578806300
 Transform:
   m_ObjectHideFlags: 0
