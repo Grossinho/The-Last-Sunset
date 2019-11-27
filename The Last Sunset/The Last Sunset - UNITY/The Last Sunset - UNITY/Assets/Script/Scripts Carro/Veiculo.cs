@@ -16,9 +16,10 @@ public class Veiculo : MonoBehaviour
     [SerializeField] float rotationZ, sensitivityZ, curva;
     [SerializeField] float carregaNitro;
     [SerializeField] float tempo;
-    [SerializeField] ParticleSystem part;
+   /* [SerializeField] ParticleSystem part;
     [SerializeField] ParticleSystem part2;
     [SerializeField] ParticleSystem part3;
+    */
     public static float Velocidade;
     public float NitroAtual;
     [Range(20, 500)]
@@ -239,14 +240,15 @@ public class Veiculo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Veiculo") || other.gameObject.CompareTag("Mafia"))
         {
-            part.Play();
-            part2.Play();
-            part3.Play();
+           // part.Play();
+          //  part2.Play();
+           // part3.Play();
             
             GameController.instancia.SaveRecord();
             Debug.Log(PlayerPrefs.GetFloat("Record"));
             StartCoroutine(Morreu());
             
+            Time.timeScale = 0;
 
             //  SceneManager.LoadScene("Game Over");
         }
@@ -254,7 +256,6 @@ public class Veiculo : MonoBehaviour
     IEnumerator Morreu()
     {
         yield return new WaitForSeconds(0);
-        Time.timeScale = 0.1f;
     }
 
 }

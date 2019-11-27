@@ -5759,7 +5759,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063769059}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3810f5bfbd9d53d41b9333489258a44f, type: 3}
   m_Name: 
@@ -7171,12 +7171,12 @@ MonoBehaviour:
   sensitivityZ: 1.5
   curva: 10
   carregaNitro: 25
+  tempo: 200
+  NitroAtual: 0
   BarraNitro: {fileID: 1758959742}
   Velocimetro: {fileID: 1003694704}
   NitroCheio: 100
   velocidadeNitro: 250
-  NitroAtual: 0
-  tempo: 200
 --- !u!4 &5815383384578806300
 Transform:
   m_ObjectHideFlags: 0
