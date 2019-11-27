@@ -43,8 +43,7 @@ public class Veiculo : MonoBehaviour
     void Update()
     {
 
-        if (mafia == null)
-            mafia = GameObject.FindWithTag("Mafia");
+      
 
         corpoRigido.velocity = transform.forward * Velocidade;
         if (Input.GetAxis("Vertical") < 0)
@@ -248,7 +247,7 @@ public class Veiculo : MonoBehaviour
             Debug.Log(PlayerPrefs.GetFloat("Record"));
             StartCoroutine(Morreu());
             
-            Time.timeScale = 0;
+            Time.timeScale = 0.1f;
 
             //  SceneManager.LoadScene("Game Over");
         }
