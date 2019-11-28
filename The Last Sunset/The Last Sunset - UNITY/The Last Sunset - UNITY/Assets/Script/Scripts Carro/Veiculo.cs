@@ -168,6 +168,9 @@ public class Veiculo : MonoBehaviour
         {
             semNitro = false;
         }
+
+        
+        if(!GameController.paused)
         if (Input.GetKey(KeyCode.Space) && semNitro == false)
         {
 
