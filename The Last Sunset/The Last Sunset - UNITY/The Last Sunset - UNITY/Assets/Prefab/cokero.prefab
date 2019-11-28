@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2328322637010904587}
   - component: {fileID: 1211610151813241735}
   - component: {fileID: 6912006947976363322}
-  - component: {fileID: 4320450099905819445}
+  - component: {fileID: 6273564230738953358}
   m_Layer: 0
   m_Name: cokero
   m_TagString: Untagged
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a605a83e5f59db44e83a6e9320e5e2b1, type: 3}
-  m_Color: {r: 0, g: 0.5171041, b: 0.5377358, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 0, g: 0.4753658, b: 0.6698113, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.9, y: 4.16}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890248b0b07b0fc4d91251f20f19b6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4320450099905819445
+--- !u!114 &6273564230738953358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,6 +102,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916278772771888274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8b8d834ab6767a46a7b4fbc2358851e, type: 3}
+  m_Script: {fileID: 11500000, guid: 568957bb9d15b4e4981cf5c693d2d368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
