@@ -10,16 +10,11 @@ public class Load : MonoBehaviour
 
     void Start()
     {        
-        //m_Text.text = "Carregando...";
+        m_Text.text = "Carregando...";
         StartCoroutine(LoadScene());
 
     }
-
-    private void LateUpdate()
-    {
-        
-
-    }
+    
 
 
     IEnumerator LoadScene()
@@ -38,13 +33,13 @@ public class Load : MonoBehaviour
         while (!asyncOperation.isDone)
         {
             // gera o progresso atual
-            //m_Text.text = "Carregando: " + (asyncOperation.progress * 100) + "%";
+            m_Text.text = "Carregando... ";
 
             // Verifique se o carregamento terminou 
             if (asyncOperation.progress >= 0.9f)
             {
                 /// Altere o texto para mostrar que a cena está pronta 
-                //m_Text.text = "Pressione 'Espaço' para continuar";
+                m_Text.text = "Pressione 'Espaço' para continuar";
                 // Espere você pressionar a tecla espaço para ativar a cena 
                 if (Input.GetKeyDown(KeyCode.Space))
                     // Ativa a cena 
