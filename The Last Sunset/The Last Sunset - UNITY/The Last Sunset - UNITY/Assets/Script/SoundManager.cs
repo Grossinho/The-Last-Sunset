@@ -5,8 +5,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance = null;
-    [SerializeField] AudioSource musicSource;
+    public static AudioSource musicSource;
     [SerializeField] AudioClip musicaInicial;
+    public int startingPitch = 1;
 
     void Awake()
     {
@@ -21,6 +22,12 @@ public class SoundManager : MonoBehaviour
 
         //Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        musicSource = GetComponent<AudioSource>();
+        musicSource.pitch = startingPitch;
     }
 
     private void Update()

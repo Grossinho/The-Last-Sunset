@@ -52,10 +52,10 @@ public class GameController : MonoBehaviour
         sireneHUD = true;
         cam = Camera.main;
         bloom = cam.GetComponent<Bloom>();
-        textoMusica.text = "Colete fitas para ouvir alguma coisa!";
         posInicial = carroPos.position;
 
         textoPosInicial = textoMusica.transform.localPosition;
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Musicmenu>().StopMusic();
 
      
 

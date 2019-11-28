@@ -10,7 +10,7 @@ public class Load : MonoBehaviour
 
     void Start()
     {        
-        m_Text.text = "Carregando...";
+        //m_Text.text = "Carregando...";
         StartCoroutine(LoadScene());
 
     }
@@ -29,6 +29,7 @@ public class Load : MonoBehaviour
         // Comece a carregar a cena que você especificar
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("Jogo");
 
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Musicmenu>().StopMusic();
 
         // Não deixe a cena ser ativada até que 
         asyncOperation.allowSceneActivation = false;
@@ -43,7 +44,7 @@ public class Load : MonoBehaviour
             if (asyncOperation.progress >= 0.9f)
             {
                 /// Altere o texto para mostrar que a cena está pronta 
-                m_Text.text = "Pressione 'Espaço' para continuar";
+                //m_Text.text = "Pressione 'Espaço' para continuar";
                 // Espere você pressionar a tecla espaço para ativar a cena 
                 if (Input.GetKeyDown(KeyCode.Space))
                     // Ativa a cena 

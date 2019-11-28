@@ -6,16 +6,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Veiculo : MonoBehaviour
 {
+    [SerializeField] float pitch, pitchMotor;
     [SerializeField] float limiteLateral, carregaNitro, tempo, perdaVeloLateral, NitroAtual;
     public Transform[] MeshRodas;
     public WheelCollider[] ColisorRodas;
     private GameObject mafia;
     private Rigidbody corpoRigido;
     private float angulo, direcao, pesoVeiculo = 1500, rotationZ, sensitivityZ, curva, velocidadeCaminhando, velocidadeCorrendo;
-   /* [SerializeField] ParticleSystem part;
-    [SerializeField] ParticleSystem part2;
-    [SerializeField] ParticleSystem part3;
-    */
     public static float Velocidade;
     public Image BarraNitro;
     public Image Velocimetro;
@@ -24,6 +21,7 @@ public class Veiculo : MonoBehaviour
     bool perdaVelo = false;
     private bool semNitro = false;
 
+    AudioSource motor;
 
 
     void Start()
@@ -33,6 +31,7 @@ public class Veiculo : MonoBehaviour
         corpoRigido = GetComponent<Rigidbody>();
         corpoRigido.mass = pesoVeiculo;
         curva = 10;
+        motor = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -173,7 +172,8 @@ public class Veiculo : MonoBehaviour
         if(!GameController.paused)
         if (Input.GetKey(KeyCode.Space) && semNitro == false)
         {
-
+            SoundManager.musicSource.pitch = pitch;
+                motor.pitch = pitchMotor;
             NitroAtual -= Time.deltaTime * (Velocidade / 3) * Mathf.Pow(2.718f, multEuler);
             Velocidade += 0.1f;
             GameController.instancia.nitro(1f);
@@ -182,6 +182,8 @@ public class Veiculo : MonoBehaviour
         }
         else
         {
+                motor.pitch = 1;
+            SoundManager.musicSource.pitch = 1;
             // GameController.instancia.LigaPost(3);
             GameController.instancia.nitro(0f);
             GameController.instancia.zom(false);
