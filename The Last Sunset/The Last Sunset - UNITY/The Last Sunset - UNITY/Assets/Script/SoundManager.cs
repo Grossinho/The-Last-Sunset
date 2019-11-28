@@ -36,6 +36,7 @@ public class SoundManager : MonoBehaviour
         {
             musicSource.clip = musicaInicial;
             musicSource.Play();
+            GameController.instancia.FitaTocando(false);
         }
     }
 

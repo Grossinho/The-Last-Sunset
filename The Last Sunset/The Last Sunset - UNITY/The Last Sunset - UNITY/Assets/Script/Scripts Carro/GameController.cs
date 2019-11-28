@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     public float normal = 60;
     float smooth = 5, contador;
     bool isZoomed = false;
-    public static bool paused = false;
+    public static bool paused = false, tocandoFita;
     bool sireneHUD, GameOver, umavez;
     #endregion
 
@@ -46,6 +46,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        tocandoFita = false;
         contador = 10;
         umavez = false;
         GameOver = false;
@@ -141,7 +142,10 @@ public class GameController : MonoBehaviour
         post.enabled = simNao;
     }
 
-
+    public void FitaTocando(bool v)
+    {
+        tocandoFita = v;
+    }
 
 
 
