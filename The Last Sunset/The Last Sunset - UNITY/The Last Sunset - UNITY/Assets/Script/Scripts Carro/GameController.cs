@@ -25,10 +25,10 @@ public class GameController : MonoBehaviour
     public float distancia;
     public float zoom = 90;
     public float normal = 60;
-    float smooth = 5;
+    float smooth = 5, contador;
     bool isZoomed = false;
     public static bool paused = false;
-    bool sireneHUD, GameOver;
+    bool sireneHUD, GameOver, umavez;
     #endregion
 
     #region Singleton
@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        contador = 10;
+        umavez = false;
         GameOver = false;
         sireneHUD = true;
         cam = Camera.main;
@@ -100,6 +102,7 @@ public class GameController : MonoBehaviour
         {
             Pausar(false);
         }
+
         
     }
 
@@ -149,15 +152,31 @@ public class GameController : MonoBehaviour
         if (paused)
         {
             
-            Time.timeScale = 0f;
             blur.enabled = true;
             if (gameover)
             {
+
+
                 painelGameover.SetActive(true);
                 GameOver = true;
-                
+
+                if (!umavez)
+                {
+                    StartCoroutine(Morreu());
+                    umavez = true;
+                }
+
+                /*
+                 * for (float x = 100f; x >= 0f; x -= 0.1f * Time.DeltaTime)
+                {
+                    Debug.Log(x);
+                    Time.timeScale = x;
+                }
+                */
             }
-            else painelPause.SetActive(true);
+            else { painelPause.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
         else
         {
@@ -166,8 +185,9 @@ public class GameController : MonoBehaviour
             blur.enabled = false;
         }
 
-            
-        
+
+
+
     }
 
     IEnumerator Pisca()
@@ -183,6 +203,17 @@ public class GameController : MonoBehaviour
         }
         else
             StartCoroutine(Pisca());
+    }
+
+    IEnumerator Morreu()
+    {
+        yield return new WaitForSeconds(0.02f);
+        if (--contador > 0)
+        {
+            Time.timeScale -= 0.1f;
+            StartCoroutine(Morreu());
+        }
+        else Time.timeScale = 0;
     }
 }
 

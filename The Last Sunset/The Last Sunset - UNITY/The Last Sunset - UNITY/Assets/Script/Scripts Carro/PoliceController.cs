@@ -36,7 +36,7 @@ public class PoliceController : MonoBehaviour
 
         transform.position = new Vector3(player.position.x, transform.position.y , transform.position.z);
 
-        if (transform.position.z + 13 > player.position.z && vida)
+        if (transform.position.z + 14 > player.position.z && vida)
         {
             velo = Veiculo.Velocidade - 2;
             vida = false;

@@ -869,6 +869,7 @@ GameObject:
   - component: {fileID: 5304910377721481370}
   - component: {fileID: -8195740072781538515}
   - component: {fileID: -4576292546555077139}
+  - component: {fileID: 3413818137242711257}
   m_Layer: 0
   m_Name: Obstaculo4
   m_TagString: Veiculo
@@ -972,3 +973,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velo: 50
+--- !u!114 &3413818137242711257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7949177697326621502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c878ff50213a44a8a0ca8439dc235e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

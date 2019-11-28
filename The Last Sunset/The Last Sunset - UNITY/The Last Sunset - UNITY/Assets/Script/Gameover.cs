@@ -8,6 +8,7 @@ public class Gameover : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
+            GetComponent<Collider>().isTrigger = false;
             GameController.instancia.Pausar(true);
         }
     }
