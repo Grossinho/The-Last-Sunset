@@ -7,7 +7,7 @@ using UnityStandardAssets.CinematicEffects;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController instancia;
+    #region Variaveis
     [SerializeField] Text textoDistancia, textoMusica, textoVelocidade;
     [SerializeField] RectTransform posTextoMusica;
     [SerializeField] Transform carroPos, player, vanPolicia;
@@ -17,29 +17,32 @@ public class GameController : MonoBehaviour
     [SerializeField] Image[] policiaBarra;
     [SerializeField] UnityEngine.Rendering.PostProcessing.PostProcessLayer post;
     [SerializeField] Image piscaAHUD, piscaVHUD, blur;
+    [SerializeField] GameObject painelPause, painelGameover;
     LensAberrations lensAberrations;
     Bloom bloom;
-    bool sireneHUD, GameOver;
     Camera cam;
-    [SerializeField] GameObject painelPause, painelGameover;
-
-
-    public float distancia;
     Vector3 posInicial, textoPosInicial;
-
-
-
+    public float distancia;
     public float zoom = 90;
     public float normal = 60;
     float smooth = 5;
     bool isZoomed = false;
-    bool paused = false;
+    public static bool paused = false;
+    bool sireneHUD, GameOver;
+    #endregion
+
+    #region Singleton
+
+    public static GameController instancia;
 
     void Awake()
     {
         if (instancia == null) instancia = this;
         else if (instancia != this) Destroy(this.gameObject);
     }
+
+    #endregion
+
 
     private void Start()
     {
@@ -145,12 +148,14 @@ public class GameController : MonoBehaviour
 
         if (paused)
         {
+            
             Time.timeScale = 0f;
             blur.enabled = true;
             if (gameover)
             {
                 painelGameover.SetActive(true);
                 GameOver = true;
+                
             }
             else painelPause.SetActive(true);
         }
