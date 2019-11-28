@@ -8291,6 +8291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a3f87acda8b8e4a9589a3b7a7ba6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pitch: 0.9
+  pitchMotor: 1.05
   limiteLateral: 5.8
   carregaNitro: 25
   tempo: 200
@@ -8880,8 +8882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fbd61dd06efcc4680f426ecd33a4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 8936775733529155200}
   musicaInicial: {fileID: 8300000, guid: 7217c067a589cc14094581ff7807ba82, type: 3}
+  startingPitch: 1
 --- !u!1 &6669610297924795487
 GameObject:
   m_ObjectHideFlags: 0
