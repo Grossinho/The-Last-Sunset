@@ -26,7 +26,7 @@ public class Coletavel : MonoBehaviour
 
     IEnumerator toca()
     {
-        GameController.instancia.FitaTocando(true);
+        PoliceController.vida = true;
         mudaMusica.Play();
         corpo.SetActive(false);
         yield return new WaitForSeconds(mudaMusica.clip.length);

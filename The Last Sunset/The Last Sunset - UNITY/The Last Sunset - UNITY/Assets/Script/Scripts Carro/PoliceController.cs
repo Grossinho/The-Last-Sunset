@@ -8,7 +8,7 @@ public class PoliceController : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Light farolV, farolA;
     [SerializeField]float velo;
-    bool vida;
+    public static bool vida;
     Rigidbody rgb;
  
     void Start()
@@ -36,7 +36,8 @@ public class PoliceController : MonoBehaviour
 
         transform.position = new Vector3(player.position.x, transform.position.y , transform.position.z);
         transform.rotation = player.rotation;
-        if (transform.position.z + 14 > player.position.z && vida)
+
+        if (transform.position.z + 13 > player.position.z && vida)
         {
             velo = Veiculo.Velocidade - 2;
             vida = false;
