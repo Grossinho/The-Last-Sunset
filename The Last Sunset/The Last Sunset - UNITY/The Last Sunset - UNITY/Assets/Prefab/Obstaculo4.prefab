@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 5304910377721481370}
   - component: {fileID: -8195740072781538515}
   - component: {fileID: -4576292546555077139}
-  - component: {fileID: 3413818137242711257}
+  - component: {fileID: 3320957224047982391}
   m_Layer: 0
   m_Name: Obstaculo4
   m_TagString: Veiculo
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velo: 50
---- !u!114 &3413818137242711257
+--- !u!114 &3320957224047982391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

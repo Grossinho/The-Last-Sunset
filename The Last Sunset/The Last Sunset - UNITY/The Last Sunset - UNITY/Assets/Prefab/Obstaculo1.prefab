@@ -5868,10 +5868,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3936368093388506017}
   - component: {fileID: 4602895389458529932}
-  - component: {fileID: 598271427146341653}
-  - component: {fileID: 5063315155228985109}
-  - component: {fileID: 2322916777850000379}
-  - component: {fileID: 6340082304536698457}
+  - component: {fileID: 1861566858380003378}
   m_Layer: 0
   m_Name: Obstaculo1
   m_TagString: Untagged
@@ -5906,7 +5903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568957bb9d15b4e4981cf5c693d2d368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &598271427146341653
+--- !u!114 &1861566858380003378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5918,48 +5915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c878ff50213a44a8a0ca8439dc235e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &5063315155228985109
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084028677259204486}
-  serializedVersion: 2
-  m_Mass: 600
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
---- !u!65 &2322916777850000379
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084028677259204486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.6433446, y: 0.74, z: 4.8289185}
-  m_Center: {x: -0.1598388, y: 0.5, z: -0.11590576}
---- !u!114 &6340082304536698457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084028677259204486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82707c172942c14ca2327d76dada1d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velo: 50
 --- !u!1 &1113519305374315989
 GameObject:
   m_ObjectHideFlags: 0
@@ -44251,6 +44206,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6878731834790849275}
   - component: {fileID: 3601799883565401985}
+  - component: {fileID: 1759722978611221190}
+  - component: {fileID: 663099424904320686}
+  - component: {fileID: 9195269176802130099}
   m_Layer: 0
   m_Name: Obstaculo1 1
   m_TagString: Veiculo
@@ -44305,6 +44263,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &1759722978611221190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578841224484215016}
+  serializedVersion: 2
+  m_Mass: 600
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!65 &663099424904320686
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578841224484215016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.018761292, y: 0.007878731, z: 0.036487367}
+  m_Center: {x: -0.000039040217, y: 0.005549522, z: 0.0015019515}
+--- !u!114 &9195269176802130099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578841224484215016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8c757033ead964db403769a80a7b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velo: 50
 --- !u!1 &7580921068975817374
 GameObject:
   m_ObjectHideFlags: 0

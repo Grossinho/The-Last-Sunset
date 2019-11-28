@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 6604145889972884567}
   - component: {fileID: 7636884967866687089}
   - component: {fileID: 4917963385785580601}
-  - component: {fileID: 8596252363506034452}
+  - component: {fileID: -8598211571030988253}
   m_Layer: 0
   m_Name: Obstaculo3
   m_TagString: Veiculo
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568957bb9d15b4e4981cf5c693d2d368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8596252363506034452
+--- !u!114 &-8598211571030988253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
