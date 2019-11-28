@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 4584090972513994251}
   - component: {fileID: -3940070972214227618}
   - component: {fileID: -8495679536631249992}
-  - component: {fileID: 9081066926074562425}
+  - component: {fileID: 8422310165422080796}
   m_Layer: 0
   m_Name: Obstaculo
   m_TagString: Untagged
@@ -644,18 +644,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c878ff50213a44a8a0ca8439dc235e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9081066926074562425
-MonoBehaviour:
+--- !u!65 &8422310165422080796
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069117699194953960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c878ff50213a44a8a0ca8439dc235e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 2.6433446, y: 0.79000014, z: 6.70874}
+  m_Center: {x: -0.15983884, y: 0.8100001, z: 0.046956383}
 --- !u!1 &1373100759563091022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,7 +3827,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7556710328765355443}
-  - component: {fileID: 2912805539522577222}
   m_Layer: 0
   m_Name: DodgeChallenger (1)
   m_TagString: Veiculo
@@ -3907,19 +3907,6 @@ Transform:
   m_Father: {fileID: 8776648875387388642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!65 &2912805539522577222
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6811005975403915168}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6.420617, y: 0.79000014, z: 2.4757488}
-  m_Center: {x: -0.16190146, y: 0, z: 0.033170503}
 --- !u!1 &6898305453324289197
 GameObject:
   m_ObjectHideFlags: 0
