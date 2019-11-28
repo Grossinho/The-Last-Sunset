@@ -35,7 +35,7 @@ public class PoliceController : MonoBehaviour
         else farolA.enabled = true;
 
         transform.position = new Vector3(player.position.x, transform.position.y , transform.position.z);
-
+        transform.rotation = player.rotation;
         if (transform.position.z + 14 > player.position.z && vida)
         {
             velo = Veiculo.Velocidade - 2;
