@@ -5995,7 +5995,7 @@ RectTransform:
   m_GameObject: {fileID: 1817586979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9924573, y: 0.9924573, z: 0.9924573}
+  m_LocalScale: {x: 0.70311826, y: 0.70311826, z: 0.70311826}
   m_Children:
   - {fileID: 2001007567}
   - {fileID: 1993328719}
@@ -6004,8 +6004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4.4197083}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 36.3}
+  m_SizeDelta: {x: 0, y: -665.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817586981
 MonoBehaviour:
@@ -6027,7 +6027,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dafbc2756164c314395fb02b9c7c9bc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 346e7ccbf109a4941962ce6abb508030, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6622,7 +6622,7 @@ RectTransform:
   m_GameObject: {fileID: 1993328718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.6085906, y: 0.9214109, z: 0.9214109}
+  m_LocalScale: {x: 10.304063, y: 1.436657, z: 1.436657}
   m_Children:
   - {fileID: 2105233273}
   - {fileID: 807880946}
@@ -6631,7 +6631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 719.5, y: -477.03064}
+  m_AnchoredPosition: {x: 803, y: -351}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993328720
@@ -7417,7 +7417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 719.5, y: -502}
+  m_AnchoredPosition: {x: 803, y: -502}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2122797707
@@ -7459,7 +7459,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2122797708}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
