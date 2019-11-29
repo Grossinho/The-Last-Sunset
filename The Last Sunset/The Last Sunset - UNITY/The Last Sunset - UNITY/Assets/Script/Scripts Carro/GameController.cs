@@ -26,8 +26,8 @@ public class GameController : MonoBehaviour
     public float zoom = 90;
     public float normal = 60;
     float smooth = 5, contador;
-    bool isZoomed = false;
-    public static bool paused = false, tocandoFita;
+    bool isZoomed;
+    public static bool paused, tocandoFita;
     bool sireneHUD, GameOver, umavez;
     #endregion
 
@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        isZoomed = false;
+        paused = false;
         tocandoFita = false;
         contador = 10;
         umavez = false;
@@ -56,11 +58,15 @@ public class GameController : MonoBehaviour
         posInicial = carroPos.position;
 
         textoPosInicial = textoMusica.transform.localPosition;
-        GameObject.FindGameObjectWithTag("Music").GetComponent<Musicmenu>().StopMusic();
-
-     
+        GameObject.FindGameObjectWithTag("Music").GetComponent<Musicmenu>().StopMusic();    
 
     }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        
+    }
+
     private void Update()
     {
         distancia = Mathf.Round(Vector3.Distance(posInicial, carroPos.position) * aumentoDistancia);
