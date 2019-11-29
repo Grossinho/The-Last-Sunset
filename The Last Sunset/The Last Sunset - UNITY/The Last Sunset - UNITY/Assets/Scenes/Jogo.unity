@@ -8350,7 +8350,7 @@ MonoBehaviour:
   limiteLateral: 5.8
   carregaNitro: 25
   tempo: 200
-  perdaVeloLateral: 10
+  perdaVeloLateral: 20
   NitroAtual: 20
   MeshRodas:
   - {fileID: 1902639799280061514}

@@ -173,7 +173,7 @@ public class Veiculo : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && semNitro == false)
         {
             SoundManager.musicSource.pitch = pitch;
-                motor.pitch = pitchMotor;
+            motor.pitch = pitchMotor;
             NitroAtual -= Time.deltaTime * (Velocidade / 3) * Mathf.Pow(2.718f, multEuler);
             Velocidade += 0.1f;
             GameController.instancia.nitro(1f);
