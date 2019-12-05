@@ -8,9 +8,8 @@ using System;
 public class Recorde : MonoBehaviour
 {
     [SerializeField] Text textoRecorde;
-    float recordes;
+    float recordes, novoRecorde;
     string nomes; 
-    float novoRecorde;
     int contador;
 
 
@@ -18,16 +17,9 @@ public class Recorde : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
-        contador = 2;
+        contador = 2;       
 
-        novoRecorde = PlayerPrefs.GetFloat("newrecord", 0);
-
-        if (novoRecorde > PlayerPrefs.GetFloat("recorde"))
-        {
-            PlayerPrefs.SetFloat("recorde", novoRecorde);
-            novoRecorde = PlayerPrefs.GetFloat("newrecord");
-        }
-
+        novoRecorde = PlayerPrefs.GetFloat("recorde");
         InvokeRepeating("AtualizaRecorde", 0, 1);
     }
 

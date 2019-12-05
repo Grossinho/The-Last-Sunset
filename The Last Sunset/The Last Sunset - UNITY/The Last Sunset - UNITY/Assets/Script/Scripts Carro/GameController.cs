@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     public float distancia;
     public float zoom = 90;
     public float normal = 60;
-    float smooth = 5, contador;
+    float smooth = 5, contador, novoRecorde;
     bool isZoomed;
     public static bool paused, tocandoFita;
     bool sireneHUD, GameOver, umavez;
@@ -116,7 +116,13 @@ public class GameController : MonoBehaviour
     public void SaveRecord()
     {
         PlayerPrefs.SetFloat("newrecord", distancia);
-        
+
+        novoRecorde = PlayerPrefs.GetFloat("newrecord", 0);
+
+        if (novoRecorde > PlayerPrefs.GetFloat("recorde"))
+        {
+            PlayerPrefs.SetFloat("recorde", novoRecorde);           
+        }
     }
 
     public void nitro(float pot)
